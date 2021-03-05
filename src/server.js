@@ -3,9 +3,9 @@
 const express = require('express');
 const app = express();
 
-// const notFound = require('./error-handlers/404.js');
-// const errors = require('./error-handlers/500.js');
-// const logger = require('./middleware/logger.js');
+const notFound = require('./error-handlers/404.js');
+const errors = require('./error-handlers/500.js');
+const logger = require('./middleware/logger.js');
 const clothesRoute = require('./routes/clothes.js');
 const foodRoute = require('./routes/food.js');
 
@@ -20,10 +20,10 @@ const PORT = process.env.PORT || 3333;
 app.use(express.json());
 app.use(clothesRoute);
 app.use(foodRoute);
-// app.use(logger);
-// app.use('*', notFound);
+app.use(logger);
+app.use('*', notFound);
 
-// app.use(errors);
+app.use(errors);
 
 module.exports = {
   server: app,
