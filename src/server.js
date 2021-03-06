@@ -10,9 +10,9 @@ const clothesRoute = require('./routes/clothes.js');
 const foodRoute = require('./routes/food.js');
 
 const mongoose = require('mongoose');
-const MONGODB_URI = 'mongodb://localhost:27017/mydatabase';
-const options = { useNewUrlParser: true, useUnifiedTopology: true};
-mongoose.connect(MONGODB_URI, options);
+// const MONGODB_URI = 'mongodb://localhost:27017/mydatabase';
+// const options = { useNewUrlParser: true, useUnifiedTopology: true};
+// mongoose.connect(MONGODB_URI, options);
 
 
 const PORT = process.env.PORT || 3333; 
