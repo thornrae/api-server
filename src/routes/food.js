@@ -35,7 +35,9 @@ async function getAllFood (req, res) {
 
 async function createFood (req, res) {
   let obj = req.body;
+  console.log('obj...', obj);
   let newFood = await food.create(obj);
+  console.log('newfood...', newFood);
   res.status(201).send(newFood);
 }
 

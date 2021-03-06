@@ -19,7 +19,9 @@ class Collection {
  }
 
  create(record) {
+   console.log('record..', record)
    let newRecord = new this.model(record);
+   console.log('newrecord..', newRecord)
    return newRecord.save()
  }
 

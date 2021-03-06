@@ -26,7 +26,7 @@ app.use('*', notFound);
 app.use(errors);
 
 module.exports = {
-  server: app,
+  app: app,
   start: (port) => {
     app.listen(port, () => {
       console.log(`listening on ${port}`)
