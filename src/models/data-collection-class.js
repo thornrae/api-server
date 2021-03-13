@@ -30,7 +30,9 @@ class Collection {
  }
 
  delete(_id) {
-   return this.model.findByIdAndDelete(_id);
+  let deleted = this.model.findByIdAndDelete(_id);
+  // console.log('collected deleted..', deleted);
+  return deleted
  }
 }
 

@@ -18,9 +18,10 @@ const mongoose = require('mongoose');
 const PORT = process.env.PORT || 3333; 
 
 app.use(express.json());
+app.use(logger);
 app.use(clothesRoute);
 app.use(foodRoute);
-app.use(logger);
+
 app.use('*', notFound);
 
 app.use(errors);
