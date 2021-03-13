@@ -10,23 +10,24 @@ const clothesRoute = require('./routes/clothes.js');
 const foodRoute = require('./routes/food.js');
 
 const mongoose = require('mongoose');
-const MONGODB_URI = 'mongodb://localhost:27017/mydatabase';
-const options = { useNewUrlParser: true, useUnifiedTopology: true};
-mongoose.connect(MONGODB_URI, options);
+// const MONGODB_URI = 'mongodb://localhost:27017/mydatabase';
+// const options = { useNewUrlParser: true, useUnifiedTopology: true};
+// mongoose.connect(MONGODB_URI, options);
 
 
 const PORT = process.env.PORT || 3333; 
 
 app.use(express.json());
+app.use(logger);
 app.use(clothesRoute);
 app.use(foodRoute);
-app.use(logger);
+
 app.use('*', notFound);
 
 app.use(errors);
 
 module.exports = {
-  server: app,
+  app: app,
   start: (port) => {
     app.listen(port, () => {
       console.log(`listening on ${port}`)

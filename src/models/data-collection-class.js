@@ -19,7 +19,9 @@ class Collection {
  }
 
  create(record) {
+   console.log('record..', record)
    let newRecord = new this.model(record);
+   console.log('newrecord..', newRecord)
    return newRecord.save()
  }
 
@@ -28,7 +30,9 @@ class Collection {
  }
 
  delete(_id) {
-   return this.model.findByIdAndDelete(_id);
+  let deleted = this.model.findByIdAndDelete(_id);
+  // console.log('collected deleted..', deleted);
+  return deleted
  }
 }
 

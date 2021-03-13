@@ -42,7 +42,8 @@ async function updateClothes (req, res) {
 async function deleteClothes (req, res){
   let id = req.params.id;
   let removed = await clothes.delete(id);
-  res.status(204).send('deleted');
+  res.status(200).send(removed);
 }
 
 module.exports = clothesRouter;
+

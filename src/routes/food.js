@@ -35,7 +35,9 @@ async function getAllFood (req, res) {
 
 async function createFood (req, res) {
   let obj = req.body;
+  console.log('obj...', obj);
   let newFood = await food.create(obj);
+  console.log('newfood...', newFood);
   res.status(201).send(newFood);
 }
 
@@ -48,8 +50,10 @@ async function updateFood (req, res) {
 
 async function deleteFood (req, res) {
   let id = req.params.id;
+  // console.log('deleted id', id)
   let removed = await food.delete(id);
-  res.status(204).send('deleted item')
+  // console.log('removed...', removed);
+  res.status(200).send(removed)
 }
 
 module.exports = foodRouter;
